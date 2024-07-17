@@ -794,8 +794,9 @@ function isValidKeyboardEvent(event: KeyboardEvent, currentTarget: Element): boo
   const role = element.getAttribute('role');
   // Accessibility for keyboards. Space and Enter only.
   // "Spacebar" is for IE 11
+  console.log('in Forked isValidKeyboardEvent');
   return (
-    (key === 'Enter' || key === ' ' || key === 'Spacebar' || code === 'Space') &&
+    (key === 'Enter') &&
     !((element instanceof getOwnerWindow(element).HTMLInputElement && !isValidInputKey(element, key)) ||
       element instanceof getOwnerWindow(element).HTMLTextAreaElement ||
       element.isContentEditable) &&
